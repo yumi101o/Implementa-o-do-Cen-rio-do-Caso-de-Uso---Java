@@ -1,18 +1,22 @@
-# Implementa-o-do-Cen-rio-do-Caso-de-Uso---Java
-
 # Minha Refeição — Caso de Uso "Assinar Plano de Refeições"
 
-Implementação em Java (console) do cenário modelado no Diagrama de Sequência e no Diagrama de Classes de Projeto (ver Wiki do repositório). O código segue a arquitetura **Fronteira → Controle → Entidades (Domínio)**, com persistência em **arquivos CSV**.
+Implementação em Java (console) do cenário modelado no Diagrama de Sequência e no Diagrama de Classes de Projeto. O código segue a arquitetura **Fronteira → Controle → Entidades (Domínio)**, com persistência em **arquivos CSV**.
 
-Todo o código está no arquivo `MinhaRefeicao.java`, organizado em blocos comentados: entidades, coleções e persistência, serviços, controle e fronteira. Os nomes das classes são os mesmos do diagrama.
+- **Wiki (diagramas e mapeamento UML → código):** https://github.com/yumi101o/Diagrama-de-Sequ-ncia-e-Diagrama-de-Classes-de-Projeto/wiki
+- **Vídeo de explicação:** COLE_AQUI_O_LINK_DO_VIDEO
+
+Todo o código está em um único arquivo, `MinhaRefeicao.java`, organizado em blocos comentados: entidades, coleções e persistência, serviços, controle e fronteira. Os nomes das classes são os mesmos do diagrama.
 
 ## Requisitos
+
 - JDK 17 ou superior (testado com JDK 21)
 - Nenhuma biblioteca externa
 
 ## Como executar
 
-Na pasta onde está o arquivo `MinhaRefeicao.java`:
+1. Baixe o repositório (**Code → Download ZIP**) e extraia, ou clone com `git clone`.
+2. Abra o terminal na pasta onde está o arquivo `MinhaRefeicao.java`.
+3. Execute:
 
 ```bash
 java MinhaRefeicao.java
@@ -43,10 +47,11 @@ Dados úteis para teste:
 - **SMS simulado:** o código aparece no console (`[SMS simulado] ...`). Para fixar o código em demonstrações: `SMS_CODIGO_FIXO=123456 java MinhaRefeicao.java` (Windows: `set SMS_CODIGO_FIXO=123456` antes do comando).
 - **Cartão válido:** `4111111111111111`, validade futura (ex.: `12/2030`), CVV com 3 dígitos.
 - **Preferências aceitas:** `VEGETARIANO`, `SEM_LACTOSE`, `SEM_GLUTEN` (separadas por vírgula; Enter = nenhuma).
+- **Planos:** Essencial (3 refeições, R$ 149,90), Completo (5 refeições, R$ 229,90) e Premium (7 refeições, R$ 319,90).
 
 ## Persistência
 
-Os arquivos CSV são criados automaticamente na pasta `dados/`, na primeira execução:
+Os arquivos CSV são criados automaticamente na pasta `dados/`, ao lado do `MinhaRefeicao.java`, na primeira execução:
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -65,12 +70,13 @@ Planos e cardápio estão definidos no código (classes `CatalogoPlanos` e `Card
 | Coleções / persistência | `Assinantes`, `CatalogoPlanos`, `Cardapio`, `RepositorioAssinaturas` |
 | Serviços / atores secundários | `ServicoSMS`, `ProcessadorPagamento`, `OperadoraCartaoProxy`, `GeradorProtocolo` |
 
-Cada método público do `AssinaturaController` corresponde a uma mensagem recebida da tela no diagrama de sequência. O mapeamento completo entre mensagens, métodos e fluxos alternativos está na Wiki do repositório.
+Cada método público do `AssinaturaController` corresponde a uma mensagem recebida da tela no diagrama de sequência. O mapeamento completo entre mensagens, métodos e fluxos alternativos está na página **Implementacao** da Wiki.
 
 ## Estrutura do repositório
 
 ```
 MinhaRefeicao.java     # código-fonte completo
 README.md
-dados/                 # CSVs gerados na execução
 ```
+
+A pasta `dados/` é gerada na execução e não faz parte do repositório.
