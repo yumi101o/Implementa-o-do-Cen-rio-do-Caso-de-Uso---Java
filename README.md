@@ -1,11 +1,9 @@
-
-https://github.com/user-attachments/assets/e1d5e272-f366-44e3-beb6-7834c2b28867
 # Minha Refeição — Caso de Uso "Assinar Plano de Refeições"
 
 Implementação em Java (console) do cenário modelado no Diagrama de Sequência e no Diagrama de Classes de Projeto. O código segue a arquitetura **Fronteira → Controle → Entidades (Domínio)**.
 
 - **Wiki (diagramas e mapeamento UML → código):** https://github.com/yumi101o/Diagrama-de-Sequ-ncia-e-Diagrama-de-Classes-de-Projeto/wiki
-- **Vídeo de explicação:** Uploading Video_projeto de SoftWare.mp4…
+- **Vídeo de explicação:** https://github.com/user-attachments/assets/e1d5e272-f366-44e3-beb6-7834c2b28867
 
  
 
